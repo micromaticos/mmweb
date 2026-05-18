@@ -1,17 +1,165 @@
 ---
-
+// Este espacio es para lógica (importar componentes, datos, etc.)
+// Por ahora, lo dejamos vacío o para futuras variables.
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Esto hará que tu web se vea bien en celulares, clave para los verticales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Micromáticos | No somos reales</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <style>
+      /* Aquí empieza tu estética caótica y analógica */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: whitesmoke; /* Fondo casi negro, crunch */
+        font-family: 'Courier New', 'VT323', monospace; /* Fuente pixelera o tosca */
+        color: #e0e0e0;
+        /* Le damos un grano analógico con un fondo de ruido (opcional) */
+        /* background-image: url("data:image/svg+xml,..."); */
+      }
+
+      /* Contenedor principal con un límite de ancho para no volvernos locos */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+
+      /* Hero section: caos controlado */
+      .hero {
+        text-align: center;
+        padding: 4rem 1rem;
+      }
+
+      h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        letter-spacing: -2px;
+        /* Un efecto de "glitch" o distorsión analógica */
+        text-shadow: 3px 3px 0px #ff3300;
+        margin-bottom: 1rem;
+      }
+
+      .logo {
+        max-width: 100%;      /* No se desborda en móvil */
+        height: auto;         /* Mantiene proporción */
+        display: block;
+        margin: 0 auto;       /* Centrado */
+        transform: rotate(2deg);      }
+
+      .hero-tagline {
+        font-size: 1.2rem;
+        color: #ffcc00;
+        text-transform: uppercase;
+        font-style: italic;
+      }
+
+      .subtitulo-reel {
+        max-width: 100%;
+        width: 200px;
+        height: 50px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 1rem auto 0 auto;  /* ← ESTO lo centra: auto a los lados, 1rem arriba, 0 abajo */
+      }
+
+      /* Tarjeta de un personaje o video */
+      .card {
+        background: #1a1a1a;
+        border: 1px solid #333;
+        padding: 1rem;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translate(-5px, -5px); /* Efecto "movimiento tosco" */
+        border-color: #ff3300;
+      }
+
+      
+
+      button {
+        background: none;
+        border: 2px solid #000000;
+        color: #000000;
+        padding: 0.5rem 1rem;
+        font-family: monospace;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      button:hover {
+        background: #ffcc00;
+        color: #0a0a0a;
+        border-color: #0a0a0a;
+      }
+
+      /* Para el footer */
+      .site-footer {
+        padding-top: 2rem;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #1a1a1a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sección Hero: Impacto Inmediato -->
+      <section class="hero">
+        <img src="/mmLogo-800x200px-negro.png" alt="Logo Micromáticos" class="logo" />
+        
+        <!-- En index.astro, donde quieras el subtítulo animado -->
+        <div id="subtitulo-reel" class="subtitulo-reel"></div>
+        <script>
+          const frames = [
+            '/noSomosReales/noSomosReales-01.png',
+            '/noSomosReales/noSomosReales-02.png',
+            '/noSomosReales/noSomosReales-03.png',
+            '/noSomosReales/noSomosReales-04.png'
+            // ... todos tus frames
+          ];
+          
+          let currentFrame = 0;
+          const container = document.getElementById('subtitulo-reel');
+          
+          // Pre-carga los frames (opcional, mejora fluidez)
+          const preloadedImages = frames.map(src => {
+            const img = new Image();
+            img.src = src;
+            return img;
+          });
+          
+          setInterval(() => {
+            currentFrame = (currentFrame + 1) % frames.length;
+            container.style.backgroundImage = `url('${frames[currentFrame]}')`;
+          }, 500); // 100ms entre frames = 10fps (tosco y deliberado)
+        </script>
+      </section>
+
+      
+
+      <!-- Footer simple -->
+      <footer class="site-footer">
+        <p>
+          ✦ ¿Jalas o te pandeas? ✦<br />
+          <!-- Aquí irá tu input de email -->
+          <input type="email" placeholder="Aquí pones tu correo" style="margin-top: 1rem; padding: 0.5rem; background: #111; border: 1px solid #333; color: white;" />
+          <button style="margin-left: 0.5rem;">+ Jalo</button>
+        </p>
+        <p style="margin-top: 2rem;">© 2026 - Con el favor de DYOS</p>
+      </footer>
+    </div>
+  </body>
 </html>
