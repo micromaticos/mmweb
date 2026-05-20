@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Micromáticos | Chido ✦</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f8f8f8;
+        font-family: 'Courier New', 'VT323', monospace;
+        color: #000000;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* El sello de "chido" */
+      .sello {
+        font-size: 6rem;
+        font-weight: bold;
+        letter-spacing: -4px;
+        color: #000000;
+        text-shadow: 6px 6px 0px #e5ff00;
+        margin-bottom: 2rem;
+        transform: rotate(-5deg);
+        animation: temblor 0.3s infinite;
+      }
+
+      @keyframes temblor {
+        0% { transform: rotate(-5deg) translateX(0px); }
+        50% { transform: rotate(-3deg) translateX(2px); }
+        100% { transform: rotate(-5deg) translateX(0px); }
+      }
+
+      .mensaje {
+        background: #f8f8f8;
+        border: 2px dashed #3c3c3c;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .mensaje::before {
+        content: "✦";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        background: #e5ff00;
+        padding: 0 5px;
+        color: #000000;
+        font-size: 1.5rem;
+      }
+
+      .mensaje::after {
+        content: "✦";
+        position: absolute;
+        bottom: -15px;
+        right: -15px;
+        background: #e5ff00;
+        padding: 0 5px;
+        color: #000000;
+        font-size: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #000000;
+      }
+
+      .texto {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+
+      .texto-small {
+        font-size: 0.8rem;
+        color: #373737;
+        margin-top: 1rem;
+      }
+
+      .boton-caotico {
+        background: none;
+        border: 2px solid #000000;
+        color: #000000;
+        padding: 0.5rem 1rem;
+        font-family: monospace;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .boton-caotico:hover {
+        background: #e5ff00;
+        color: #0a0a0a;
+        border-color: #0a0a0a;
+      }
+
+      .footer-chido {
+        margin-top: 2rem;
+        font-size: 0.7rem;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sello">
+        ♥╣[-_-]╠♥
+      </div>
+
+      <div class="mensaje">
+        <h1>✦ Te rifaste, Ñero ✦</h1>
+        <p class="texto">
+          <br>
+          Te mandamos un correo <br>
+          para confirmar que no eres escoria digital.<br>
+          (Aunque la escoria digital igual hace bulto).
+        </p>
+        <p class="texto-small">
+          Si no ves el correo en 5 minutos, revisa en spam.<br>
+          A veces nuestros sistemas se atascan.
+        </p>
+      </div>
+
+      <a href="/" class="boton-caotico">
+        ← Regresar al crisol
+      </a>
+
+      <div class="footer-chido">
+        ✦ Micromáticos no se hace responsable por tu tiempo perdido ✦
+      </div>
+    </div>
+  </body>
+</html>
