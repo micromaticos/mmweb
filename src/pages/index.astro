@@ -112,6 +112,60 @@
         font-size: 0.8rem;
         color: #1a1a1a;
       }
+            /* Estilos para el formulario de Kit (versión HTML) */
+      .formkit-form {
+        max-width: 400px !important;
+        margin: 1rem auto !important;
+        background: transparent !important;
+      }
+
+      .formkit-form [data-style="clean"] {
+        padding: 0 !important;
+      }
+
+      .formkit-field {
+        margin-bottom: 0.5rem !important;
+      }
+
+      .formkit-input {
+        background: #111 !important;
+        border: 1px solid #e5ff00 !important;
+        color: #e5ff00 !important;
+        padding: 0.75rem !important;
+        font-family: 'Courier New', monospace !important;
+        font-weight: bold;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .formkit-submit {
+        background: none !important;
+        border: 2px solid #000000 !important;
+        border-radius: 0 !important;
+        color: #000000 !important;
+        padding: 0.5rem 1rem !important;
+        font-weight: bold !important;
+        cursor: pointer !important;
+        width: 100% !important;
+        transition: all 0.2s ease !important;
+      }
+
+      .formkit-submit:hover {
+        background: #e5ff00 !important;
+        color: #0a0a0a !important;
+        border-color: #0a0a0a !important;
+      }
+
+      .formkit-alert-error {
+        background: rgba(255, 51, 0, 0.2) !important;
+        border-color: #e5ff00 !important;
+        color: #e5ff00 !important;
+        font-size: 0.8rem !important;
+      }
+
+      .formkit-powered-by-convertkit-container {
+        display: none !important; /* Oculta el texto "Built with Kit" si quieres */
+      }
     </style>
   </head>
   <body>
@@ -155,8 +209,23 @@
         <p>
           ✦ ¿Jalas o te pandeas? ✦<br />
           <!-- Aquí irá tu input de email -->
-          <input type="email" placeholder="Aquí pones tu correo" style="margin-top: 1rem; padding: 0.5rem; background: #111; border: 1px solid #333; color: white;" />
-          <button style="margin-left: 0.5rem;">+ Jalo</button>
+        <form action="https://app.kit.com/forms/9459772/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9459772" data-uid="fd750d8599" data-format="inline" data-version="5" min-width="400 500 600 700 800">
+          <div data-style="clean">
+            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+            <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+              <div class="formkit-field">
+                <input class="formkit-input" name="email_address" type="email" placeholder="Tu dirección de correo" required="" style="border-color: rgb(227, 227, 227); border-radius: 4px; color: rgb(0, 0, 0);">
+              </div>
+              <button data-element="submit" class="formkit-submit formkit-submit" style="background-color: rgb(22, 119, 190); border-radius: 4px; color: rgb(255, 255, 255); font-weight: 400;">
+                <div class="formkit-spinner"><div></div><div></div><div></div></div>
+                <span class="">+ Jalo</span>
+              </button>
+            </div>
+            <div class="formkit-powered-by-convertkit-container">
+              <a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow noopener">Built with Kit</a>
+            </div>
+          </div>
+        </form>        
         </p>
         <p style="margin-top: 2rem;">© 2026 - Con el favor de DYOS</p>
       </footer>
